@@ -1,6 +1,6 @@
 // file from https://github.com/Nircek/column-math-tester
 // licensed under MIT license
-
+#include <iostream>
 /*
 MIT License
 
@@ -24,7 +24,23 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-
+using std::string, std::cout, std::cin;
+int len(int x) {
+  //faster log10
+  int i=1;
+  while(x/=10)++i;
+  return i;
+}
+string pad(int x) {
+  return string(x, ' ');
+}
 int main(int argc, const char **argv) {
+  int a, b;
+  cout<<"Type a and b: ";cin>>a>>b;
+  int c = a+b;
+  int l = len(c);
+  cout<<pad(l-len(a))<<a<<'\n';
+  cout<<pad(l-len(b))<<b<<'\n';
+  cout<<c<<'\n';
   return 0;
 }
